@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}KINESLA— Vision CNN{% endblock %}
+
+{% block content %}
+
+<section class="predict-section">
+  <div class="container">
+
+    <div class="predict-header">
+      <h1 class="predict-title">Classification des images<br><span class="text-cyan">en 10 catégories</span></h1>
+    </div>
+
+    <div class="predict-layout">
+
+      <!-- Upload -->
+      <div class="upload-col">
+        <div class="upload-zone" id="uploadZone">
+          <input type="file" id="fileInput" accept="image/*" />
+          <div class="upload-zone__title">Glisser une image ici</div>
+          <div class="upload-zone__hint">PNG, JPG, JPEG ·</div>
+          <div class="upload-zone__preview" id="previewWrap">
+            <img id="previewImg" src="" alt="Aperçu" />
+          </div>
+        </div>
+
+        <button class="btn btn--primary btn--full" id="predictBtn" disabled>
+           Classifier l'image
+        </button>
+
+        <div class="classes-list">
+          <div class="classes-list__label">10 classes</div>
+          <div class="classes-list__tags">
+            {% set classes = [
+              ("avion"),("automobile"),("oiseau"),("chat"),("cerf"),
+              ("chien"),("grenouille"),("cheval"),("bateau"),("camion")
+            ] %}
+            {% for name in classes %}
+            <span class="class-tag"> {{ name }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Résultat -->
+      <div class="result-panel">
+
+        <div class="result-panel__placeholder" id="resultPlaceholder">
+          <div class="result-panel__placeholder-title">Aucune prédiction</div>
+          <div class="result-panel__placeholder-sub">Chargez une image et lancez la classification</div>
+        </div>
+
+        <div class="loading-state" id="loadingState">
+          <div class="spinner"></div>
+          <div>Inférence en cours…</div>
+        </div>
+
+        <div class="result-content" id="resultContent">
+          <div class="result-top">
+            <span class="result-emoji" id="resultEmoji"></span>
+            <div>
+              <div class="result-nom" id="resultNom"></div>
+              <div class="result-conf" id="resultConf"></div>
+            </div>
+          </div>
+          <div class="proba-label">Distribution des probabilités</div>
+          <div class="proba-list" id="probaList"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

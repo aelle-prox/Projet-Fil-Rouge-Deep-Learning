@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}KINESKA — Accueil{% endblock %}
+
+{% block content %}
+
+<!-- ══════ HERO ══════ -->
+<section class="hero">
+  <div class="hero__bg-orb hero__bg-orb--1"></div>
+  <div class="hero__bg-orb hero__bg-orb--2"></div>
+
+  <div class="container">
+    <div class="hero__center">
+
+      <h1 class="hero__title">
+        <span class="accent">KINESLA</span>
+      </h1>
+
+      <p class="hero__desc">
+        KINESLA est une API de démonstration construite autour de deux modèles de Deep Learning :
+        un <strong>CNN</strong> pour classifier des images et un <strong>LSTM</strong>
+        pour prédire les températures météo.
+      </p>
+
+      <div class="hero__actions">
+        <a href="/cnn"  class="btn btn--primary">Classifier image</a>
+        <a href="/lstm" class="btn btn--purple">Predire météo</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════ BANNIÈRE CTA ══════ -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-banner">
+      <div>
+        <div class="cta-banner__title">Prêt à analyser vos données ?</div>
+        <div class="cta-banner__sub">
+          Sélectionnez une mission dans le menu ci-dessus.
+        </div>
+      </div>
+      <div class="cta-banner__actions">
+        <a href="/cnn"  class="btn btn--primary">classifier une image</a>
+        <a href="/lstm" class="btn btn--outline"> predire la Météo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ ÉQUIPE ══════ -->
+<section class="team-section">
+  <div class="container">
+    <h2 class="section-title">Notre équipe</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-card__avatar" style="background:#2563eb"></div>
+        <div class="team-card__name">aelle</div>
+      </div>
+      <div class="team-card">
+        <div class="team-card__avatar" style="background:#2563eb"></div>
+        <div class="team-card__name">nerge</div>
+      </div>
+      <div class="team-card">
+        <div class="team-card__avatar" style="background:#2563eb"></div>
+        <div class="team-card__name">kiriane</div>
+      </div>
+      <div class="team-card">
+        <div class="team-card__avatar" style="background:#2563eb"></div>
+        <div class="team-card__name">leandra</div>
+      </div>
+      <div class="team-card">
+        <div class="team-card__avatar" style="background:#2563eb"></div>
+        <div class="team-card__name">sandra</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

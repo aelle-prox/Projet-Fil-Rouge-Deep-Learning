@@ -1,0 +1,40 @@
+# Environnement virtuel
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Modèles lourds
+*.keras
+*.h5
+saved_model/
+
+# Données
+data/*.csv
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Anaconda / Jupyter
+.anaconda/
+.conda/
+.continuum/
+.jupyter/
+.keras/
+.matplotlib/
+*.ipynb
+
+# Tout ce qui est en dehors du projet
+../../*
+../*

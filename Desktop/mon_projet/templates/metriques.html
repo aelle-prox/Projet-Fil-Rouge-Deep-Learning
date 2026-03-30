@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}KINESKA — Métriques{% endblock %}
+
+{% block content %}
+
+<!-- ══════ GRAPHIQUES CNN ══════ -->
+<section class="metrics-section">
+  <div class="container">
+
+    <h2 class="section-title">Résultats de classification</h2>
+
+    <div class="charts-grid">
+
+      <div class="chart-card chart-card--full">
+        <div class="chart-card__header">
+          <div class="chart-card__title">Courbes d'entraînement CNN</div>
+        </div>
+        <div class="chart-card__body">
+          <img src="/static/images/training_history.png" alt="Courbes CNN" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="chart-card chart-card--full">
+        <div class="chart-card__header">
+          <div class="chart-card__title">Matrice de confusion </div>
+        </div>
+        <div class="chart-card__body">
+          <img src="/static/images/confusion_matrix.png" alt="Matrice de confusion" loading="lazy" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════ GRAPHIQUES LSTM ══════ -->
+<section class="metrics-section" style="padding-top:0">
+  <div class="container">
+
+    <div class="divider"></div>
+    <h2 class="section-title">Résultats de prédiction météo</h2>
+
+    <div class="charts-grid">
+
+      <div class="chart-card">
+        <div class="chart-card__header">
+          <div class="chart-card__title">Courbes de perte LSTM</div>
+          <span class="chart-card__subtitle">Train vs Val MSE</span>
+        </div>
+        <div class="chart-card__body">
+          <img src="/static/images/lstm_training_curves.png" alt="Courbes LSTM" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-card__header">
+          <div class="chart-card__title">Température réelle vs prédite</div>
+        </div>
+        <div class="chart-card__body">
+          <img src="/static/images/lstm_evaluation.png" alt="LSTM réel vs prédit" loading="lazy" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

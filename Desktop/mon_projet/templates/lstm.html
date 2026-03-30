@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}KINESKA — Météo LSTM{% endblock %}
+
+{% block content %}
+
+<section class="predict-section">
+  <div class="container">
+
+    <div class="predict-header">
+      <h1 class="predict-title">Prédiction Météorologique<br><span class="text-purple">LSTM — T+1</span></h1>
+      <span id="lstmModeTag" class="mode-tag"></span>
+    </div>
+
+    <div class="lstm-layout">
+
+      <!-- Inputs températures -->
+      <div class="temp-input-panel">
+        <div class="temp-input-panel__header">
+          <div class="temp-input-panel__title">24 températures passées (°C)</div>
+          <button class="btn btn--outline btn--sm" id="lstmRandomBtn">Aléatoire</button>
+        </div>
+
+        <div class="temp-time-labels">
+          <span>h−24</span>
+          <span>h−1</span>
+        </div>
+
+        <div class="temp-grid">
+          {% for i in range(24) %}
+          <div class="temp-cell">
+            <label class="temp-cell__label">h−{{ 24 - i }}</label>
+            <input type="number" class="temp-input"
+                   step="0.1" min="-30" max="50"
+                   placeholder="0.0" />
+          </div>
+          {% endfor %}
+        </div>
+
+        <button class="btn btn--purple btn--full" id="lstmPredictBtn">
+           Prédire T+1
+        </button>
+      </div>
+
+      <!-- Résultat -->
+      <div class="lstm-result-panel">
+
+        <div id="lstmPlaceholder" class="result-panel__placeholder">
+          <div class="result-panel__placeholder-title">En attente de données</div>
+          <div class="result-panel__placeholder-sub">Cliquez sur "Prédire T+1" pour lancer l'inférence</div>
+        </div>
+
+        <div class="lstm-pred-display" id="lstmResult">
+          <div class="lstm-pred-value" id="lstmPredValue">--</div>
+          <div class="lstm-pred-unit">°C</div>
+          <div class="lstm-pred-sublabel">Température prédite à T+1</div>
+          <div class="lstm-trend" id="lstmTrend"></div>
+
+          <div class="canvas-wrap">
+            <div class="canvas-legend">
+              <span class="canvas-legend__item canvas-legend__item--cyan">Séquence réelle</span>
+              <span class="canvas-legend__item canvas-legend__item--purple">Prédiction T+1</span>
+            </div>
+            <canvas id="seqCanvas" width="400" height="120"></canvas>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
