@@ -31,7 +31,7 @@
 
 ---
 
-## 1· Présentation
+## Présentation
 
 Ce projet a pour objectif de passer de la **théorie mathématique** à une
 **implémentation complète** en Deep Learning, en couvrant deux domaines
@@ -48,7 +48,7 @@ modèles, entraînement, évaluation et visualisation.
 
 ---
 
-## 2 · Résultats globaux
+##  Résultats globaux
 
 | Modèle | Métrique | Valeur | Objectif | Statut |
 |--------|----------|--------|----------|--------|
@@ -61,7 +61,7 @@ modèles, entraînement, évaluation et visualisation.
 
 ---
 
-## 3 · Arborescence
+##  Arborescence
 ```
 Projet-Deep-Learning/
 │
